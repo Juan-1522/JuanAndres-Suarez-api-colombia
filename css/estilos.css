@@ -64,6 +64,84 @@ body {
 .titulo-seccion { font-size: 1.5rem; color: var(--azul); margin-bottom: 6px; }
 .subtitulo { color: var(--gris); margin-bottom: 20px; }
 
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: var(--sombra);
+}
+.spinner {
+  width: 26px; height: 26px;
+  border: 4px solid var(--borde);
+  border-top-color: var(--azul);
+  border-radius: 50%;
+  animation: girar 0.9s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+
+.estado.error { border-color: var(--rojo); color: var(--rojo); font-weight: 600; }
+.oculto { display: none; }
+
+.resumen {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-left: 6px solid var(--amarillo);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  box-shadow: var(--sombra);
+}
+.resumen strong { color: var(--azul); font-size: 1.15rem; }
+
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tarjeta:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(28,35,51,0.14); }
+
+.tarjeta img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  background: var(--borde);
+}
+
+.tarjeta-cuerpo { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.tarjeta-cuerpo h3 { color: var(--tinta); font-size: 1.1rem; }
+
+.insignia {
+  align-self: flex-start;
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.descripcion { font-size: 0.9rem; color: var(--gris); }
+
 .portada { text-align: center; padding: 30px 10px 10px; }
 .portada h2 { font-size: 2rem; color: var(--azul); margin-bottom: 10px; }
 .portada p { max-width: 640px; margin: 0 auto 26px; color: var(--gris); }

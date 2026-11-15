@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores de Colombia</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="franja"></div>
+
+  <header class="cabecera">
+    <h1>Sabores de Colombia</h1>
+    <p>Platos típicos consumidos desde /api/v1/TypicalDish</p>
+  </header>
+
+  <nav class="navegacion">
+    <a href="index.html">Inicio</a>
+    <a href="sabores.html" class="activa">Sabores</a>
+    <a href="departamentos.html">Departamentos</a>
+  </nav>
+
+  <main class="contenedor">
+    <h2 class="titulo-seccion">Platos típicos</h2>
+    <p class="subtitulo">Nombre, descripción, departamento e imagen de cada plato.</p>
+
+    <div id="cargando" class="estado">
+      <div class="spinner"></div>
+      <span>Cargando platos desde la API...</span>
+    </div>
+
+    <div id="error" class="estado error oculto"></div>
+
+    <div id="resumen" class="resumen oculto"></div>
+
+    <div id="cuadricula" class="cuadricula"></div>
+  </main>
+
+  <footer class="pie">
+    Actividad: Mini Portal de Colombia con API &middot; <b>Juan Andrés Suarez</b>
+  </footer>
+</body>
+</html>
