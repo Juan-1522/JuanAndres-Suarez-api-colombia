@@ -64,6 +64,26 @@ body {
 .titulo-seccion { font-size: 1.5rem; color: var(--azul); margin-bottom: 6px; }
 .subtitulo { color: var(--gris); margin-bottom: 20px; }
 
+.portada { text-align: center; padding: 30px 10px 10px; }
+.portada h2 { font-size: 2rem; color: var(--azul); margin-bottom: 10px; }
+.portada p { max-width: 640px; margin: 0 auto 26px; color: var(--gris); }
+.accesos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 760px; margin: 0 auto; }
+.acceso {
+  display: block;
+  text-decoration: none;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-top: 6px solid var(--amarillo);
+  border-radius: 14px;
+  padding: 26px 20px;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s;
+}
+.acceso:hover { transform: translateY(-3px); }
+.acceso h3 { color: var(--azul); margin-bottom: 8px; }
+.acceso p { color: var(--gris); font-size: 0.9rem; margin: 0; }
+.acceso .ir { display: inline-block; margin-top: 14px; color: var(--rojo); font-weight: 700; }
+
 .pie {
   background: var(--azul);
   color: #cdd8f2;
