@@ -26,6 +26,23 @@ Ambas páginas muestran un mensaje de carga y manejan los errores con `catch`.
 - JavaScript vanilla (`fetch`, promesas, manipulación del DOM con `createElement`)
 - API pública `https://api-colombia.com/`
 
+## Estructura del proyecto
+
+```
+JuanAndres-Suarez-api-colombia/
+├── index.html            # Portada con enlaces a las dos secciones
+├── sabores.html          # Opción 5: platos típicos
+├── departamentos.html    # Opción 1: departamentos
+├── css/
+│   └── estilos.css       # Estilos compartidos
+├── js/
+│   ├── sabores.js        # fetch + DOM de platos
+│   └── departamentos.js  # fetch + DOM de departamentos
+├── img/
+│   └── platos/           # 68 imágenes optimizadas (600 px, ~2.8 MB en total)
+└── capturas/             # Capturas de pantalla
+```
+
 ## Instrucciones de uso
 
 1. Clona o descarga el repositorio.
@@ -41,6 +58,19 @@ Ambas páginas muestran un mensaje de carga y manejan los errores con `catch`.
 | Portada | Sabores | Departamentos |
 |---|---|---|
 | ![Portada](capturas/index.png) | ![Sabores](capturas/sabores.png) | ![Departamentos](capturas/departamentos.png) |
+
+## Detalles técnicos
+
+- **Regiones:** el listado `/Department` devuelve `region: null` (solo `regionId`),
+  por eso `departamentos.js` consume también `/api/v1/Region` y cruza los datos por
+  `regionId` para mostrar el nombre de la región y contar por región.
+- **Imágenes:** la API sirve ~20.6 MB en fotos (varias de más de 1 MB) y tenía 3 rotas
+  (Tamal Tolimense, Arroz de Lisa y Dulce de guayaba). Se descargaron y optimizaron las
+  68 imágenes a 600 px de ancho (JPEG, ~2.8 MB en total) y se sirven desde `img/platos/`.
+  Así la página carga rápido, no depende de enlaces caídos y cada imagen tiene un
+  respaldo por si alguna llegara a fallar.
+- **Carga y errores:** cada página muestra un mensaje de carga que se oculta al llegar
+  los datos, y un mensaje de error visible si el `fetch` falla (`.catch`).
 
 ## Nombre del estudiante
 
