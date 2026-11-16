@@ -140,6 +140,9 @@ body {
   letter-spacing: 0.4px;
 }
 
+.datos { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; color: var(--gris); }
+.datos b { color: var(--azul); display: block; font-size: 0.95rem; }
+
 .descripcion { font-size: 0.9rem; color: var(--gris); }
 
 .portada { text-align: center; padding: 30px 10px 10px; }
