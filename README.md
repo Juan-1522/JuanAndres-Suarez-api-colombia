@@ -36,6 +36,12 @@ Ambas páginas muestran un mensaje de carga y manejan los errores con `catch`.
 > También puedes servirlo con cualquier servidor estático o publicarlo en GitHub Pages;
 > al ser HTML/CSS/JS puro, no necesita compilación ni dependencias.
 
+## Capturas
+
+| Portada | Sabores | Departamentos |
+|---|---|---|
+| ![Portada](capturas/index.png) | ![Sabores](capturas/sabores.png) | ![Departamentos](capturas/departamentos.png) |
+
 ## Nombre del estudiante
 
 Juan Andrés Suarez
