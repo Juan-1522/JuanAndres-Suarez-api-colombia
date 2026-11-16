@@ -21,7 +21,7 @@ Promise.all([fetch(URL_DEPARTAMENTOS), fetch(URL_REGIONES)])
     regiones.forEach(function (r) { mapaRegiones[r.id] = r.name; });
 
     cargando.classList.add("oculto");
-    mostrarResumen(departamentos);
+    mostrarResumen(departamentos, mapaRegiones);
     mostrarDepartamentos(departamentos, mapaRegiones);
   })
   .catch(function (err) {
@@ -30,10 +30,29 @@ Promise.all([fetch(URL_DEPARTAMENTOS), fetch(URL_REGIONES)])
     error.classList.remove("oculto");
   });
 
-function mostrarResumen(departamentos) {
+function mostrarResumen(departamentos, mapaRegiones) {
+  const conteo = {};
+  departamentos.forEach(function (d) {
+    const nombre = mapaRegiones[d.regionId] || "Sin región";
+    conteo[nombre] = (conteo[nombre] || 0) + 1;
+  });
+
   const strong = document.createElement("strong");
   strong.textContent = departamentos.length + " departamentos en total";
   resumen.appendChild(strong);
+
+  const chips = document.createElement("div");
+  chips.className = "chips-region";
+  Object.keys(conteo).forEach(function (nombre) {
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    const b = document.createElement("b");
+    b.textContent = conteo[nombre];
+    chip.appendChild(b);
+    chip.appendChild(document.createTextNode(" " + nombre));
+    chips.appendChild(chip);
+  });
+  resumen.appendChild(chips);
   resumen.classList.remove("oculto");
 }
 
