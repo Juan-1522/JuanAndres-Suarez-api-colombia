@@ -1,11 +1,5 @@
 const URL_PLATOS = "https://api-colombia.com/api/v1/TypicalDish";
 
-const REEMPLAZOS = {
-  10: "img/tamal-tolimense.jpg",
-  16: "img/arroz-de-lisa.jpg",
-  43: "img/dulce-de-guayaba.jpg"
-};
-
 const RESPALDO = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240">' +
   '<rect width="100%" height="100%" fill="#e4e0d6"/>' +
@@ -47,7 +41,7 @@ function mostrarPlatos(platos) {
     tarjeta.className = "tarjeta";
 
     const img = document.createElement("img");
-    img.src = REEMPLAZOS[plato.id] || plato.imageUrl;
+    img.src = "img/platos/" + plato.id + ".jpg";
     img.alt = "Foto de " + plato.name;
     img.loading = "lazy";
     img.onerror = function () { img.onerror = null; img.src = RESPALDO; };
